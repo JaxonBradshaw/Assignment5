@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!--bringing in the model-->
+@model IQueryable<Book>
+
+
+<header>
+    <div class="text-center">
+        <h1 class="bg-info">Cool Guy Bookstore</h1>
+    </div>
+</header>
+
+<h2>Books</h2>
+<!--Looping through model to create page layout-->
+@foreach (var x in Model)
+{
+    <!--making little drop down thingies-->
+    <div class="container, text-left">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#@x.BookId">@x.Title</a>
+                    </h4>
+                </div>
+                <div id="@x.BookId" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>Author: @x.AuthFirst @x.AuthLast</p>
+                        <p>Publisher: @x.Publisher</p>
+                        <p>ISBN: @x.ISBN</p>
+                        <p>Classification: @x.Classification</p>
+                        <p>Category: @x.Category</p>
+                        <p>Price: @x.Price</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
