@@ -36,6 +36,7 @@ namespace Assignment5.Models
                         ISBN = "978-0451419439",
                         Classification = "Fiction",
                         Category = "Classic",
+                        PageCount = 1488,
                         Price = 9.95
 
                     },
@@ -49,6 +50,7 @@ namespace Assignment5.Models
                         ISBN = "978-0743270755",
                         Classification = "Non-Fiction",
                         Category = "Biography",
+                        PageCount = 944,
                         Price = 14.58
 
                     },
@@ -62,6 +64,7 @@ namespace Assignment5.Models
                         ISBN = "978-0553384611",
                         Classification = "Non-Fiction",
                         Category = "Biography",
+                        PageCount = 832,
                         Price = 21.54
 
                     },
@@ -75,6 +78,7 @@ namespace Assignment5.Models
                         ISBN = "978-0812981254",
                         Classification = "Non-Fiction",
                         Category = "Biography",
+                        PageCount = 864,
                         Price = 11.61
 
                     },
@@ -88,6 +92,7 @@ namespace Assignment5.Models
                         ISBN = "978-0812974492",
                         Classification = "Non-Fiction",
                         Category = "Historical",
+                        PageCount = 528,
                         Price = 13.33
 
                     },
@@ -101,6 +106,7 @@ namespace Assignment5.Models
                         ISBN = "978-0804171281",
                         Classification = "Fiction",
                         Category = "Historical Fiction",
+                        PageCount = 288,
                         Price = 15.95
 
                     },
@@ -114,6 +120,7 @@ namespace Assignment5.Models
                         ISBN = "978-1455586691",
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
+                        PageCount = 304,
                         Price = 14.99
 
                     },
@@ -127,6 +134,7 @@ namespace Assignment5.Models
                         ISBN = "978-1455523023",
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
+                        PageCount = 240,
                         Price = 21.66
 
                     },
@@ -140,6 +148,7 @@ namespace Assignment5.Models
                         ISBN = "978-1591847984",
                         Classification = "Non-Fiction",
                         Category = "Business",
+                        PageCount = 400,
                         Price = 29.16
 
                     },
@@ -153,7 +162,50 @@ namespace Assignment5.Models
                         ISBN = "978-0553393613",
                         Classification = "Fiction",
                         Category = "Thrillers",
+                        PageCount = 642,
                         Price = 15.03
+
+                    },
+
+                    new Book
+                    {
+                        Title = "Elantris",
+                        AuthFirst = "Brandon",
+                        AuthLast = "Sanderson",
+                        Publisher = "Tor Books",
+                        ISBN = "978-1501259203",
+                        Classification = "Fiction",
+                        Category = "Fantasy",
+                        PageCount = 592,
+                        Price = 24.99
+
+                    },
+
+                    new Book
+                    {
+                        Title = "Mistborn",
+                        AuthFirst = "Brandon",
+                        AuthLast = "Sanderson",
+                        Publisher = "Tor Books",
+                        ISBN = "978-0765350381",
+                        Classification = "Fiction",
+                        Category = "High Fantasy",
+                        PageCount = 541,
+                        Price = 24.44
+
+                    },
+
+                    new Book
+                    {
+                        Title = "The Way of Kings",
+                        AuthFirst = "Brandon",
+                        AuthLast = "Sanderson",
+                        Publisher = "Tor Books",
+                        ISBN = "978-0765326355",
+                        Classification = "Fiction",
+                        Category = "High Fantasy",
+                        PageCount = 1008,
+                        Price = 23.64
 
                     }
 

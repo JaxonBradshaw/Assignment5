@@ -19,7 +19,8 @@ namespace Assignment5.Migrations
                     ISBN = table.Column<string>(nullable: false),
                     Classification = table.Column<string>(nullable: false),
                     Category = table.Column<string>(nullable: false),
-                    Price = table.Column<double>(nullable: false)
+                    Price = table.Column<double>(nullable: false),
+                    PageCount = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

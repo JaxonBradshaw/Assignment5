@@ -1,21 +1,33 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Assignment5</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    
-
     <!--adding in Bootstrap stuff-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Assignment5</title>
+
 </head>
+
 <body>
-    <div>
-        @RenderBody()
-    </div>
+    <header>
+        <div class="text-center">
+            <h1 class="bg-info">Cool Guy Bookstore</h1>
+        </div>
+    </header>
+
+    <h2 class="p-3">
+        A room without books
+        <small class="text-muted"> is like a body without a soul.</small>
+    </h2>
+
+
+    @RenderBody()
+
 </body>
 </html>

@@ -60,8 +60,12 @@ namespace Assignment5
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    //improving the urls with pagination making it so that you can put P2, P3, etc for pages
+                    "pagination",
+                    "P{page}",
+                    new { Controller = "Home", action = "index" });
+
+                endpoints.MapDefaultControllerRoute();
             });
 
             //checking to see if it has already been migrated
