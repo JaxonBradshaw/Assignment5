@@ -20,14 +20,21 @@
             <h1 class="bg-info">Cool Guy Bookstore</h1>
         </div>
     </header>
+    <!--putting the navigation menu and renderbody stuff in different col on the page-->
+    <div class="row m-1 p-1">
+        <div id="whatever" class="col-3">
+            <h2 class="p-3">
+                A room without books
+                <small class="text-muted"> is like a body without a soul.</small>
+            </h2>
 
-    <h2 class="p-3">
-        A room without books
-        <small class="text-muted"> is like a body without a soul.</small>
-    </h2>
-
-
-    @RenderBody()
+            <!--adding in navigation menu (from our NavigationMenuViewComponent)-->
+            <vc:navigation-menu />
+        </div>
+        <div class="col-8">
+            @RenderBody()
+        </div>
+    </div>
 
 </body>
 </html>

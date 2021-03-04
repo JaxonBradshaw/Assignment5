@@ -31,7 +31,7 @@ namespace Assignment5
             services.AddDbContext<BookstoreDBContext>(options =>
             {
                 //connecting to connection from appsettings
-                options.UseSqlServer(Configuration["ConnectionStrings:BookstoreConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:BookstoreConnection"]);
             });
             //adding in repository service
             services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
@@ -59,6 +59,19 @@ namespace Assignment5
 
             app.UseEndpoints(endpoints =>
             {
+                //updating the endpoints so that differing formats are accepted in the url
+                endpoints.MapControllerRoute("catpage",
+                    "{category}/{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("page",
+                    "{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", page = 1 });
+
                 endpoints.MapControllerRoute(
                     //improving the urls with pagination making it so that you can put P2, P3, etc for pages
                     "pagination",

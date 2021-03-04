@@ -30,6 +30,10 @@ namespace Assignment5.Infrastructure
         public PagingInfo PageModel { get; set; }
         public string PageAction { get; set; }
 
+        //setting up dictionary so that anything in the format of page-url- is added to the dictionary
+        [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
+        public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>();
+
         //adding more properties
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
@@ -48,7 +52,10 @@ namespace Assignment5.Infrastructure
             {
                 //building a tag
                 TagBuilder tag = new TagBuilder("a");
-                tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
+
+                PageUrlValues["page"] = i;
+                //adding PageUrlValues to finish building the rest of the tag
+                tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
 
                 if (PageClassesEnabled)
                 {

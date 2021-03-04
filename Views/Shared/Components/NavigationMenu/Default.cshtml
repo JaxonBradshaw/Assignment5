@@ -1,0 +1,21 @@
+﻿@model IEnumerable<string>
+<!--setting up how the navigation menu will look-->
+
+<!--making home button-->
+<a class="btn btn-block btn-outline-secondary" asp-action="Index" asp-controller="Home"
+   asp-route-category="">
+    Home
+</a>
+
+<!--listing out the rest of the categories in the navigation-->
+@foreach (string category in Model)
+{
+    <!--setting it up so that the selected category is highlighted-->
+    <a class="btn btn-block @(category == ViewBag.SelectedCategory ? "btn-primary" : "btn-outline-secondary")"
+       asp-action="Index" asp-controller="Home"
+       asp-route-category="@category"
+       asp-route-page="1">
+        @category
+    </a>
+}
+
