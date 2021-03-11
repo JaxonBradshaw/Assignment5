@@ -53,7 +53,7 @@ namespace Assignment5.Infrastructure
                 //building a tag
                 TagBuilder tag = new TagBuilder("a");
 
-                PageUrlValues["page"] = i;
+                PageUrlValues["pageNum"] = i;
                 //adding PageUrlValues to finish building the rest of the tag
                 tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
 

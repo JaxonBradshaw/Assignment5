@@ -8,6 +8,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+    <link href="/lib/css/all.min.css" rel="stylesheet" />
+    <link href
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Assignment5</title>
@@ -15,11 +17,16 @@
 </head>
 
 <body>
-    <header>
-        <div class="text-center">
-            <h1 class="bg-info">Cool Guy Bookstore</h1>
+    <div class="bg-dark text-white p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">Cool Guy Bookstore</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
+                </div>
+            </div>
         </div>
-    </header>
+    </div>
     <!--putting the navigation menu and renderbody stuff in different col on the page-->
     <div class="row m-1 p-1">
         <div id="whatever" class="col-3">

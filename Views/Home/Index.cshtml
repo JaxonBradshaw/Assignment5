@@ -2,61 +2,14 @@
     ViewData["Title"] = "Home Page";
 }
 
-<!--LOOK AT ME
-    For the three new bootstrap things I used an alert thing "alert-dismissible", <strong>, and <mark>.
-    I'd never used these before and so hopefuly they're not whatever is considered to be in "Chapter 7"
-    because I'm not sure what all that concludes. I used a few other new ones so let me know if any of the
-    three I listed aren't considered new enough or whatever.
 
-    Oof that was kind of long!
-    Here's a penguin for your time!
-                        __
-                     -=(o '.
-                        '.-.\
-                        /|  \\
-                        '|  ||
-                         _\_):,_
--->
 <!--bringing in the model-->
 @model BookListViewModel
 <!--Looping through model to create page layout-->
 @foreach (var x in Model.Books)
 {
-
-    //making an alert to tell people to click on dropdown stuff and only showing it if they're on the first page
-    if (x.BookId == 1)
-    {
-        <div class="alert alert-success alert-dismissible">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Click on books to see their information!</strong>
-        </div>
-    }
-
-
-    <!--making little drop down thingies-->
-    <div class="container, text-left">
-        <div class="panel-group">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title p-3">
-                        <a data-toggle="collapse" href="#@x.BookId">@x.Title</a>
-                    </h4>
-                </div>
-                <div id="@x.BookId" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p>Author: @x.AuthFirst @x.AuthLast</p>
-                        <p>Publisher: @x.Publisher</p>
-                        <p>ISBN: @x.ISBN</p>
-                        <p>Classification: @x.Classification</p>
-                        <p>Category: @x.Category</p>
-                        <p>Page Count: @x.PageCount</p>
-                        <p><mark>Price: @x.Price</mark></p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
+    //bringing in partial view
+    <partial name="BookSummary" model="x" />
 }
 <!--adding in the page numbers with bootstrap-->
 <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"

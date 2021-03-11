@@ -1,0 +1,62 @@
+﻿@model Book
+
+@*//making an alert to tell people to click on dropdown stuff and only showing it if they're on the first page
+if (Model.BookId == 1)
+{
+<div class="alert alert-success alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Click on books to see their information!</strong>
+</div>
+}*@
+
+<!--setting up partial view-->
+
+<!--making little drop down thingies-->
+<div class="container, text-left">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title p-3">
+                    <a data-toggle="collapse" href="#@Model.BookId">@Model.Title</a>
+                </h4>
+            </div>
+            <div id="@Model.BookId" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>Author: @Model.AuthFirst @Model.AuthLast</p>
+                    <p>Publisher: @Model.Publisher</p>
+                    <p>ISBN: @Model.ISBN</p>
+                    <p>Classification: @Model.Classification</p>
+                    <p>Category: @Model.Category</p>
+                    <p>Page Count: @Model.PageCount</p>
+                    <p><mark>Price: @Model.Price</mark></p>
+                    <p>
+                        <!--creating the button so that they can buy-->
+                        <form id="@Model.BookId" asp-page="/Buy" method="post">
+                            <input type="hidden" asp-for="BookId" />
+                            <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+
+                            <span class="card-text p-1">
+                                <button type="submit" class="btn-success btn-sm pull-right" style="float:right">
+                                Buy
+                                </button>
+                            </span>
+                        </form>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--<form id="@Model.BookId" asp-page="/Buy" method="post">
+    <input type="hidden" asp-for="BookId" />
+    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />-->
+    
+    <!--creating button for Buy-->
+    <!--<span class="card-text p-1">
+        @Model.Title
+        <button type="submit" class="btn-success btn-sm pull-right" style="float:right">
+            Buy
+        </button>
+    </span>
+</form>-->
